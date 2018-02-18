@@ -13,21 +13,28 @@ This repo is an exploration of Vyper by example, specifically [this market maker
 ### Setup
 The easiest way to try out the language, experiment with examples, and compile code to bytecode or LLL is to use the online compiler at [https://vyper.tools]( https://vyper.tools). For Vim users, consider my (*very* alpha version) [vim-vyper](https://github.com/Vvkmnn/vim-vyper) syntax plugin.
 
-### Install
+### Compiler
 
 First, we set up a local `python3` environment. I run [Anaconda](https://conda.io/docs/) locally, which comes with an internal environment creator. Both approaches are included below:
 
 ```bash
-# virtualenv -p python3.6 --no-site-packages ~/vyper-venv  # Vanilla Python
+# Vanilla Python
+# virtualenv -p python3.6 --no-site-packages ~/vyper-venv  
 # source ~/vyper-venv/bin/activate
-conda create conda create -n introvyper python=3.6         # Conda Python
+
+# Conda Python
+conda create -n introvyper python=3.6         
 source activate introvyper
 ```
 
-To develop [locally](https://github.com/ethereum/vyper/blob/master/docs/installing-vyper.rst) 
+Then, we'll install our [local builder](https://github.com/ethereum/vyper/blob/master/docs/installing-vyper.rst). This is attached this repository as a submodule already, but is available via:
+
 ```bash
-virtualenv -p python3.6 --no-site-packages ~/vyper-venv
-source ~/vyper-venv/bin/activate
-### Compiler
+git clone https://github.com/ethereum/vyper.git
+cd vyper
+make
+make test
+```
+
 
 
